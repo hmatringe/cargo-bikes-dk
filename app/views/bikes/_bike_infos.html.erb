@@ -1,0 +1,13 @@
+<div class="bike-box">
+<%= @bike.description %> <br>
+Daily price: <%= @bike.daily_price_in_cents / 100 %> DKK <br>
+Electric bike: <%= @bike.electric ? "yes" : "no" %> <br>
+Address: <%= @bike.address %><br>
+<% if @bike.user.name %>
+Owner: <%= @bike.user.name %> <br>
+<% end %>
+<% if @bike.user.phone_number %>
+Phone: <%= @bike.user.phone_number %> <br>
+</div>
+<% end %>
+<br>

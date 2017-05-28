@@ -1,0 +1,15 @@
+/* -------------------------------------
+ * CSS code specific to home page
+ * (margin/padding adjustments)
+ * ------------------------------------- */
+.body-wrapper{
+  position: relative;
+  // min-height:calc(100vh - 170px);
+  min-height: 91vh;
+ }
+.content-wrapper div{
+  padding: 0 0 60px 0;
+}
+.padded {
+  padding:50px 100px 150px 100px;
+}

@@ -1,0 +1,14 @@
+<% unless @bike.user == current_user %>
+<div class="booking-form text-center">
+  <h3>Book this bike now!</h3>
+  <%= simple_form_for [@bike, @booking] do |f| %>
+  <div class="input-daterange input-group" id="datepicker">
+    <%= f.input :start_date, as: :string, input_html: { class: 'input-sm form-control' } %>
+    <%= f.input :end_date, as: :string, input_html: { class: 'input-sm form-control' } %>
+  </div>
+  <br>
+  <%= f.submit "Book now", class: "btn btn-success click-alert"%>
+  <br><br>
+  <% end %>
+</div>
+<% end %>

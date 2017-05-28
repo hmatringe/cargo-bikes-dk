@@ -1,0 +1,55 @@
+<%= simple_form_for bike do |f| %>
+<%= f.error_notification %>
+  <%= f.simple_fields_for :brands do |b|%>
+      <!-- ID: #bike_brands_name -->
+      <%= b.input :name, collection: Brand.all, label: "Brand", selected: selected_brand_id %>
+  <% end %>
+  <%# f.association :brand_model, collection: BrandModel.where() %>
+
+<%= f.association :brand_model, collection: @brand_models, prompt: "Select model" %>
+<!-- Dropdown prepare possible colors -->
+<div class="form-inputs">
+  <%= f.input :color %>
+</div>
+<!--  -->
+<div class="form-inputs">
+  <%= f.input :electric %>
+</div>
+<!-- Should divide by 100 before inputing -->
+<div class="form-inputs">
+  <%= f.input :daily_price_in_cents, label: 'Rental price per day (in DKK)' %>
+</div>
+<!--  -->
+<div class="form-inputs">
+  <%= f.input :description %>
+</div>
+<!-- #should implement Google Maps API -->
+<div class="form-inputs">
+  <%= f.input :address %>
+</div>
+<!-- #get user_id from current_user NOT going to be open for user input-->
+<span>
+  <%= f.input :user_id, as: :hidden, input_html: { value: current_user.id } %>
+</span>
+
+<!-- #2 Dropdowns to select brand and brand_model -->
+<!-- maybe first hide the model & show the brand - after brand is selected, expand the model field. (javascript? Too complex?)  -->
+<%# f.association :brand_model %>
+<%# f.association :brand, through: :brand_model %>
+<%= f.input :photo, as: :attachinary %>
+<!--  -->
+<div class="form-inputs">
+  <%# f.input :address %>
+</div>
+
+<!-- #should implement Tuesday -->
+<!-- <div class="form-inputs">
+  <%# f.input :photo, as: :attachinary %>
+</div> -->
+
+<div class="form-actions">
+  <%= f.button :submit %>
+</div>
+<% end %>
+
+

@@ -1,0 +1,4 @@
+ <div>
+ <h1><%= @bike.brand_model.brand.name %> | <%= @bike.brand_model.name %></h1>
+ <%= cl_image_tag @bike.photo.path, width: 600, crop: :fit, class: "photo" if @bike.photo %>
+</div>

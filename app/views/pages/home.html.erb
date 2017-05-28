@@ -1,0 +1,77 @@
+
+  <div class="banner" style="background-image:linear-gradient(135deg, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0.2) 50%), url('<%= cl_image_path "Frederiksberg-Fonden-ladcykler_besk%C3%A5ret_bopvdz", crop: :fit %> ');">
+    <div class="banner-content">
+      <h1>Rent a cargo bike</h1>
+
+      <div class="form-inline">
+        <%= simple_form_for(@bike, method: :get) do |f| %>
+          <%= f.input :address, as: :string, label: false, placeholder: "Address" %>
+          <%= f.simple_fields_for :booking do |b| %>
+          <span class="input-daterange" id="datepicker">
+            <%= b.input :start_date, label: false, placeholder: "Start date", input_html: { class: "home-date-input" } %>
+            <%= b.input :end_date, label: false, placeholder: "End date", input_hmtml: { class: "home-date-input" } %>
+          </span>
+          <% end %>
+          <%= f.submit "Find your bike", class: "btn btn-success click-alert" %>
+        <% end %>
+      </div>
+
+    </div>
+
+  </div>
+
+
+<div class="container">
+  <div class="row">
+    <div class="text-center"><h1>Last Bikes Listed</h1></div>
+      <% @bikes.each do |bike| %>
+        <div class="col-xs-12 col-sm-4">
+          <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= cl_image_path bike.photo.path, crop: :scale; %>');">
+            <div class="card-description">
+              <h2><%# link_to bike.brand_model.brand.name, bike_path(bike) %> <%# bike.brand_model.name %> </h2>
+              <h2><%= link_to "#{bike.brand_model.brand.name} #{bike.brand_model.name}", bike_path(bike) %> </h2>
+              <h3> <%= bike.daily_price_in_cents / 100 %> DKK</h3>
+              <% if bike.electric %>
+                <h4>Electric</h4>
+              <% end %>
+          <%# bike.id %>
+            </div>
+        <%# link_to "See full details", @bike_path(bike), class: "card-link"  %>
+          </div>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>
+
+
+<% content_for(:after_js) do %>
+<script>
+$(document).ready(function() {
+  var bike_address = $('#bike_address').get(0);
+
+  if (bike_address) {
+    var autocomplete = new google.maps.places.Autocomplete(bike_address, { types: ['geocode'] });
+    // google.maps.event.addListener(autocomplete, 'place_changed', onPlaceChanged);
+    google.maps.event.addDomListener(bike_address, 'keydown', function(e) {
+      if (e.keyCode == 13) {
+        e.preventDefault(); // Do not submit the form on Enter.
+      }
+    })
+  }
+});
+</script>
+
+<script>
+  $(document).ready(function() {
+    $('.click-alert').on('click', function(e) {
+
+      if ($('.home-date-input').eq(0).val() === "" && $('.home-date-input').eq(0).val() === "") {
+        e.preventDefault();
+        sweetAlert("Please let us know \n your desired dates \n 😘");
+      }
+
+    });
+  })
+</script>
+<% end %>

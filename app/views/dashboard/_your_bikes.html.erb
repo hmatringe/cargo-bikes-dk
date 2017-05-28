@@ -1,0 +1,23 @@
+<% if @bikes.empty? %>
+
+
+    <% elsif @bikes.length == 1 %>
+
+    <h3>Your bike</h3>
+      <ul>
+        <li>
+          <%= link_to "#{@bikes.first.brand_model.brand.name} | #{@bikes.first.brand_model.name}", bike_path(@bikes.first) %>
+        </li>
+      </ul>
+
+    <% else %>
+
+    <h3>Your bikes</h3>
+      <% @bikes.each do |bike| %>
+      <ul>
+        <li>
+        <%= link_to "#{bike.brand_model.brand.name} | #{bike.brand_model.name}", bike_path(bike) %>
+        </li>
+      </ul>
+      <% end %>
+    <% end %>

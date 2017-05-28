@@ -1,0 +1,27 @@
+
+<div class="container">
+  <div class="row">
+    <div class="col-xs-8 col-xs-offset-2">
+      <h1>Rent out your bike</h1>
+      <div id="new_bike_form">
+        <%= render 'form' %>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<% content_for(:after_js) do  %>
+  <script>
+  $("#new_bike_form").change("#bike_brands_name", function(event){
+    // console.log($(this).val())
+    if($(event.target).attr("id") === "bike_brands_name") {
+      $.ajax({
+        type:"GET",
+        url:"/brand_models" + "?brand_id=" + $(event.target).val()
+      })
+    }
+
+  })
+  </script>
+<% end %>

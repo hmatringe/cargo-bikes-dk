@@ -1,0 +1,29 @@
+ <h3>Your booking requests</h3>
+
+ <% @booking_requests.each do |booking_request| %>
+   <div class="dashboard-card">
+
+    <div class="dashboardcard-description">
+      By <%= booking_request.user.first_name ||= booking_request.user.email %> <%= booking_request.user.phone_number ||= "" %><br>
+      From <%= booking_request.start_date %> to <%= booking_request.end_date %> <br>
+      For the bike: <%= link_to "#{ booking_request.bike.brand_model.name} #{booking_request.bike.brand_model.brand.name}", bike_path(booking_request.bike) %>
+    </div>
+
+    <% if booking_request.status == "pending" %>
+
+    <div class="dashboardcard-btn">
+      <%= link_to "Accept", bike_booking_path(booking_request.bike, booking_request, status: "accepted"), method: :put, class: "navbar-wagon-item navbar-wagon-button btn" %>
+    </div>
+    <div class="dashboardcard-btn">
+      <%= link_to "Deny", bike_booking_path(booking_request.bike, booking_request, status: "denied"), method: :put, class: "navbar-wagon-item navbar-wagon-button btn" %>
+    </div>
+
+    <% else %>
+
+    <div class="dashboardcard-status">
+      <%= booking_request.status %>
+    </div>
+
+    <% end %>
+  </div>
+<% end %>

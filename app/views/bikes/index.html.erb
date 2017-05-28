@@ -1,0 +1,33 @@
+<div class="container">
+  <div class="row">
+    <div class="text-center">
+      <h3>
+        All the bikes available from <%= params[:bike][:booking][:start_date] %> to <%= params[:bike][:booking][:end_date] %>
+        <% unless params[:bike][:address].blank? %>
+          <%= "around " + params[:bike][:address] %>
+        <% end %>
+      .</h3>
+      <h4>
+        <%= link_to "Modify my search", root_path %> <br><br>
+        </h4>
+    </div>
+      <% @bikes.each do |bike| %>
+        <div class="col-xs-12 col-sm-4">
+          <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= cl_image_path bike.photo.path, crop: :scale; %>');">
+            <div class="card-description">
+              <h2><%# link_to bike.brand_model.brand.name, bike_path(bike) %> <%# bike.brand_model.name %> </h2>
+              <h2><%= link_to "#{bike.brand_model.brand.name} #{bike.brand_model.name}", bike_path(bike) %> </h2>
+              <h3> <%= bike.daily_price_in_cents / 100 %> DKK</h3>
+              <% if bike.electric %>
+                <h4>Electric</h4>
+              <% end %>
+          <%# bike.id %>
+            </div>
+        <%# link_to "See full details", @bike_path(bike), class: "card-link"  %>
+          </div>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>
+

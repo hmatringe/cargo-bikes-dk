@@ -1,0 +1,27 @@
+.dashboard-card {
+  height: 70px;
+  // position: relative;
+  box-shadow: 0 0 3px #000000;
+  padding: 0 5px;
+  margin: 5px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.dashboardcard-description {
+  // position: absolute;
+  width: 170px;
+  // left: 5px;
+  flex: 1 0 auto;
+}
+.dashboardcard-status {
+  width: 150px;
+  color: #01579B;
+  flex: 0 0 20%;
+}
+.dashboardcard-btn {
+  // position: absolute;
+  // right: 5px;
+  flex: 0 0 20%;
+}

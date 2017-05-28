@@ -1,0 +1,22 @@
+.footer-wrapper {
+  background-color: white;
+  height: 100px;
+  color: #CCCCCC;
+  // position: relative;
+  bottom:0;
+  width:100%;
+}
+.footer {
+  // padding: 30px 0 0 0;
+}
+.footer ul {
+  margin: 30px 0 0 -25px;
+}
+.footer li {
+  display: inline-block;
+  letter-spacing: 20px;
+  padding: 5px;
+}
+.footer li:hover{
+  color: $blue;
+}
