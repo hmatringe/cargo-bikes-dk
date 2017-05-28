@@ -144,34 +144,34 @@ booking4.user = user14
 booking4.save
 
 
-url = "http://res.cloudinary.com/duubesaxh/image/upload/v1495624187/bike1_nnif62.png"
+url = "http://res.cloudinary.com/dchxwllhb/v1496002471/bike1_edbdoq.jpg"
 bike1.photo_url = url
 
-url2 = "http://res.cloudinary.com/duubesaxh/image/upload/v1495624188/bike2_zmiz40.png"
+url2 = "http://res.cloudinary.com/dchxwllhb/image/upload/v1496002471/bike2_o1y5lj.jpg"
 bike2.photo_url = url2
 
-url3 = "http://res.cloudinary.com/duubesaxh/image/upload/v1495624187/bike3_fh3tnn.png"
+url3 = "http://res.cloudinary.com/dchxwllhb/image/upload/v1496002471/bike3_oiykai.jpg"
 bike3.photo_url = url3
 
-url4 = "http://res.cloudinary.com/duubesaxh/image/upload/v1495624187/bike4_johchb.png"
+url4 = "http://res.cloudinary.com/dchxwllhb/image/upload/v1496002475/bike4_ucya37.jpg"
 bike4.photo_url = url4
 
-url5 = "http://res.cloudinary.com/duubesaxh/image/upload/v1495624187/bike5_yh3gy0.png"
+url5 = "http://res.cloudinary.com/dchxwllhb/image/upload/v1496002472/bike5_klvklm.jpg"
 bike5.photo_url = url5
 
-url6 = "http://res.cloudinary.com/duubesaxh/image/upload/v1495624187/bike6_hg5abu.png"
+url6 = "http://res.cloudinary.com/dchxwllhb/image/upload/v1496002471/bike6_j7c4ww.jpg"
 bike6.photo_url = url6
 
-url7 = "http://res.cloudinary.com/duubesaxh/image/upload/v1495624188/bike7_sjoq0b.png"
+url7 = "http://res.cloudinary.com/dchxwllhb/image/upload/v1496002472/bike7_mbvccw.jpg"
 bike7.photo_url = url7
 
-url8 = "http://res.cloudinary.com/duubesaxh/image/upload/v1495624188/bike8_abxyre.png"
+url8 = "http://res.cloudinary.com/dchxwllhb/image/upload/v1496002474/bike8_tqcwka.jpg"
 bike8.photo_url = url8
 
-url9 = "http://res.cloudinary.com/duubesaxh/image/upload/v1495624191/bike9_kno26k.png"
+url9 = "http://res.cloudinary.com/dchxwllhb/image/upload/v1496002473/bike9_nfesgp.jpg"
 bike9.photo_url = url9
 
-url10 = "http://res.cloudinary.com/duubesaxh/image/upload/v1495624190/bike10_gbymli.png"
+url10 = "http://res.cloudinary.com/dchxwllhb/image/upload/v1496002473/bike10_hdegb8.jpg"
 bike10.photo_url = url10
 
 bike2.electric = true
