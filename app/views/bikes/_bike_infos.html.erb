@@ -1,6 +1,6 @@
 <div class="bike-box">
 <%= @bike.description %> <br>
-Daily price: <%= @bike.daily_price_in_cents / 100 %> DKK <br>
+Daily price: <%= humanized_money_with_symbol(@bike.price) %> <%# @bike.daily_price_in_cents / 100 %> <br>
 Electric bike: <%= @bike.electric ? "yes" : "no" %> <br>
 Address: <%= @bike.address %><br>
 <% if @bike.user.name %>
