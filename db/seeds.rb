@@ -14,7 +14,7 @@ brand_model.brand = brand
 
 brand_model.save
 
-bike1 = Bike.new(color:"white",electric:false, daily_price_in_cents:34000, description:"This beauty is sleeping in my garage since my kids learned to bike! But it's a gift and I can't let it go. Take good care of it and enjoy!",address:"Kgs Nytorv, 2200 Copenhagen")
+bike1 = Bike.new(sku: "1", color:"white",electric:false, daily_price_in_cents:34000, price_cents:34000, description:"This beauty is sleeping in my garage since my kids learned to bike! But it's a gift and I can't let it go. Take good care of it and enjoy!",address:"Kgs Nytorv, 2200 Copenhagen")
 
 bike1.brand_model = brand_model
 
@@ -77,47 +77,47 @@ user14 = User.new(email: "matt@dudu.com", password: "1234563", name:"Mathew", ph
 user15 = User.new(email: "alex@dudu.com", password: "1234564", name:"Lohan", phone_number:"84 42 63 68")
 
 
-bike2 = Bike.new(color:"blue",electric:false, daily_price_in_cents:50000, description:"This ugly beast",address:"Classensgade, 2100 Copenhagen")
+bike2 = Bike.new(sku: "2", color:"blue",electric:false, daily_price_in_cents:50000, price_cents:50000, description:"This ugly beast",address:"Classensgade, 2100 Copenhagen")
 bike2.brand_model = brand_model4
 bike2.user = user2
 bike2.save
 
-bike3 = Bike.new(color:"yellow",electric:false, daily_price_in_cents:28000, description:"Nice ride",address:"Willemoesgade, 1200 Copenhagen")
+bike3 = Bike.new(sku: "3", color:"yellow",electric:false, daily_price_in_cents:28000, price_cents:28000, description:"Nice ride",address:"Willemoesgade, 1200 Copenhagen")
 bike3.brand_model = brand_model5
 bike3.user = user3
 bike3.save
 
-bike4 = Bike.new(color:"yellow",electric:false, daily_price_in_cents:31000, description:"Old and gracefull",address:"Noerrebrogade, 2200 Copenhagen")
+bike4 = Bike.new(sku: "4", color:"yellow",electric:false, daily_price_in_cents:31000, price_cents:31000, description:"Old and gracefull",address:"Noerrebrogade, 2200 Copenhagen")
 bike4.brand_model = brand_model2
 bike4.user = user4
 bike4.save
 
-bike5 = Bike.new(color:"black",electric:false, daily_price_in_cents:45000, description:"Brand new",address:"Soenderbulevard, 2300 Copenhagen")
+bike5 = Bike.new(sku: "5", color:"black",electric:false, daily_price_in_cents:45000, price_cents:45000, description:"Brand new",address:"Soenderbulevard, 2300 Copenhagen")
 bike5.brand_model = brand_model
 bike5.user = user5
 bike5.save
 
-bike6 = Bike.new(color:"yellow",electric:false, daily_price_in_cents:47000, description:"Join the fun ride!",address:"Vesterbro, 1674 Copenhagen")
+bike6 = Bike.new(sku: "6", color:"yellow",electric:false, daily_price_in_cents:47000, price_cents:47000, description:"Join the fun ride!",address:"Vesterbro, 1674 Copenhagen")
 bike6.brand_model = brand_model
 bike6.user = user6
 bike6.save
 
-bike7 = Bike.new(color:"metal",electric:false, daily_price_in_cents:34000, description:"Sweet family bike! Rent it for a weekend!",address:"Enghavevej, 1674 Copenhagen")
+bike7 = Bike.new(sku: "7", color:"metal",electric:false, daily_price_in_cents:34000, price_cents:34000, description:"Sweet family bike! Rent it for a weekend!",address:"Enghavevej, 1674 Copenhagen")
 bike7.brand_model = brand_model6
 bike7.user = user7
 bike7.save
 
-bike8 = Bike.new(color:"black",electric:false, daily_price_in_cents:33000, description:"Sporty little beast!",address:"Kingos gade, 2000 Copenhagen")
+bike8 = Bike.new(sku: "8", color:"black",electric:false, daily_price_in_cents:33000, price_cents:33000, description:"Sporty little beast!",address:"Kingos gade, 2000 Copenhagen")
 bike8.brand_model = brand_model
 bike8.user = user8
 bike8.save
 
-bike9 = Bike.new(color:"white",electric:false, daily_price_in_cents:55000, description:"Pets allowed! Take you puppy for a ride!",address:"Kongens Nytorv, 2000 Copenhagen")
+bike9 = Bike.new(sku: "9", color:"white",electric:false, daily_price_in_cents:55000, price_cents:55000, description:"Pets allowed! Take you puppy for a ride!",address:"Kongens Nytorv, 2000 Copenhagen")
 bike9.brand_model = brand_model3
 bike9.user = user9
 bike9.save
 
-bike10 = Bike.new(color:"yellow",electric:false, daily_price_in_cents:39000, description:"Take a lovely bike trip in town!",address:"Norreport, 2100 Copenhagen")
+bike10 = Bike.new(sku: "10", color:"yellow",electric:false, daily_price_in_cents:39000, price_cents:39000, description:"Take a lovely bike trip in town!",address:"Norreport, 2100 Copenhagen")
 bike10.brand_model = brand_model
 bike10.user = user10
 bike10.save

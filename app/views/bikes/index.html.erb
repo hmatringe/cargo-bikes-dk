@@ -17,7 +17,8 @@
             <div class="card-description">
               <h2><%# link_to bike.brand_model.brand.name, bike_path(bike) %> <%# bike.brand_model.name %> </h2>
               <h2><%= link_to "#{bike.brand_model.brand.name} #{bike.brand_model.name}", bike_path(bike) %> </h2>
-              <h3> <%= bike.daily_price_in_cents / 100 %> DKK</h3>
+              <!-- <h3><%# bike.daily_price_in_cents / 100 %> DKK</h3> -->
+              <h3><%= humanized_money_with_symbol(bike.price) %></h3>
               <% if bike.electric %>
                 <h4>Electric</h4>
               <% end %>

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170525145106) do
+ActiveRecord::Schema.define(version: 20170620211904) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -38,10 +38,12 @@ ActiveRecord::Schema.define(version: 20170525145106) do
     t.string   "address"
     t.integer  "brand_model_id"
     t.integer  "user_id"
-    t.datetime "created_at",           null: false
-    t.datetime "updated_at",           null: false
+    t.datetime "created_at",                       null: false
+    t.datetime "updated_at",                       null: false
     t.float    "latitude"
     t.float    "longitude"
+    t.string   "sku"
+    t.integer  "price_cents",          default: 0, null: false
     t.index ["brand_model_id"], name: "index_bikes_on_brand_model_id", using: :btree
     t.index ["user_id"], name: "index_bikes_on_user_id", using: :btree
   end
@@ -70,6 +72,15 @@ ActiveRecord::Schema.define(version: 20170525145106) do
     t.string   "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "orders", force: :cascade do |t|
+    t.string   "state"
+    t.string   "bike_sku"
+    t.integer  "amount_cents", default: 0, null: false
+    t.json     "payment"
+    t.datetime "created_at",               null: false
+    t.datetime "updated_at",               null: false
   end
 
   create_table "users", force: :cascade do |t|

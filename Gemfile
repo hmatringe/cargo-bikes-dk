@@ -6,6 +6,10 @@ source 'https://rails-assets.org' do
   gem "rails-assets-underscore"
 end
 
+gem 'coffee-script'
+gem 'money-rails'
+gem 'stripe'
+
 gem "geocoder"
 gem 'cloudinary', '1.1.7'
 gem 'attachinary', github: 'assembler/attachinary'
